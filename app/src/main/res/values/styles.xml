@@ -6,4 +6,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
+    <!-- Custom tweet style -->
+    <style name="CustomTweetStyle" parent="tw__TweetLightStyle">
+        <item name="tw__primary_text_color">@color/custom_primary_text</item>
+        <item name="tw__action_color">@color/custom_action</item>
+        <item name="tw__container_bg_color">@color/custom_bg</item>
+    </style>
+
 </resources>
