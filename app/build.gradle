@@ -43,4 +43,5 @@ dependencies {
     compile('com.twitter.sdk.android:twitter:1.6.1@aar') {
         transitive = true;
     }
+    compile 'com.android.support:design:22+'
 }

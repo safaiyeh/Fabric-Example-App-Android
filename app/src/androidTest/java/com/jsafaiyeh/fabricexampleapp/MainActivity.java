@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
         Fabric.with(this, new Crashlytics(), new Twitter(authConfig));
         setContentView(R.layout.activity_main);
 
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle("Fabric Components");
+
         String[] fabricComponents = {
-                "Embed Single Tweets",
-                "Embed Multiple Tweets",
+                "Embed Tweets",
+                "Timelines",
                 "Log In With Twitter",
                 "Digits",
                 "MoPub Banner Ad",
@@ -47,11 +51,16 @@ public class MainActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i;
                 switch (position){
                     case 0:
-                        Intent i = new Intent(getApplicationContext(), EmbedSingleTweetsActivity.class);
+                        i = new Intent(getApplicationContext(), EmbedTweetsActivity.class);
                         startActivity(i);
                         break;
+                    case 1:
+                        i = new Intent(getApplicationContext(), TimelineActivity.class);
+                        startActivity(i);
+
                 }
             }
         });

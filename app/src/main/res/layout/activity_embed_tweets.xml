@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+
+            tools:context="com.jsafaiyeh.fabricexampleapp.activites.EmbedTweetsActivity">
+
+            <!-- Default Tweet UI -->
+            <com.twitter.sdk.android.tweetui.TweetView xmlns:twittersdk="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/default_light_tweet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                twittersdk:tw__tweet_id="623052611432742913" />
+
+            <!-- Dark Tweet UI -->
+            <com.twitter.sdk.android.tweetui.TweetView xmlns:twittersdk="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/dark_tweet"
+                style="@style/tw__TweetDarkStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                twittersdk:tw__tweet_id="623052611432742913" />
+
+            <com.twitter.sdk.android.tweetui.TweetView xmlns:twittersdk="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/custom_tweet"
+                style="@style/CustomTweetStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                twittersdk:tw__tweet_id="623052611432742913" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -2,6 +2,8 @@ package com.jsafaiyeh.fabricexampleapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.twitter.sdk.android.core.Callback;
@@ -11,12 +13,17 @@ import com.twitter.sdk.android.core.models.Tweet;
 import com.twitter.sdk.android.tweetui.TweetUtils;
 import com.twitter.sdk.android.tweetui.TweetView;
 
-public class EmbedSingleTweetsActivity extends AppCompatActivity {
+public class EmbedTweetsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_embed_single_tweets);
+        setContentView(R.layout.activity_embed_tweets);
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mToolbar.setTitle("Embed Tweets");
 
         final LinearLayout mLinearLayout = (LinearLayout) findViewById(R.id.linear_layout);
 
@@ -25,7 +32,7 @@ public class EmbedSingleTweetsActivity extends AppCompatActivity {
         TweetUtils.loadTweet(tweetId, new Callback<Tweet>() {
             @Override
             public void success(Result<Tweet> result) {
-                mLinearLayout.addView(new TweetView(EmbedSingleTweetsActivity.this, result.data));
+                mLinearLayout.addView(new TweetView(EmbedTweetsActivity.this, result.data));
             }
 
             @Override
@@ -33,6 +40,16 @@ public class EmbedSingleTweetsActivity extends AppCompatActivity {
                 //Handle failure to load tweet
             }
         });
+    }
+
+    @Override
+     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

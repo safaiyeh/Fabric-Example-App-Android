@@ -3,6 +3,8 @@
     <color name="colorPrimary">#1E88E5</color>
     <color name="colorPrimaryDark">#1565C0</color>
 
+    <color name="background">#E0E0E0</color>
+
     <!--- Custom Tweet Colors -->
     <color name="custom_primary_text">#6A1B9A</color>
     <color name="custom_action">#4A148C</color>
