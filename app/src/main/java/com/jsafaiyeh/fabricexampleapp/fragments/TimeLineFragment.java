@@ -1,6 +1,7 @@
 package com.jsafaiyeh.fabricexampleapp.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -9,7 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 
+import com.digits.sdk.android.ContactsCallback;
 import com.jsafaiyeh.fabricexampleapp.R;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
@@ -29,6 +32,8 @@ public class TimeLineFragment extends ListFragment {
     private int mPage;
     private TweetTimelineListAdapter adapter;
     private Toolbar mToolbar;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+
 
 
     public static TimeLineFragment newInstance(int page) {
@@ -68,33 +73,46 @@ public class TimeLineFragment extends ListFragment {
                 break;
         }
 
-        //Swipe to refresh
-        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_layout);
-        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_layout);
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        getListView().setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
-            public void onRefresh() {
-                swipeLayout.setRefreshing(true);
-                ((TweetTimelineListAdapter) getListAdapter()).refresh(new Callback<TimelineResult<Tweet>>() {
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                int topRowVerticalPosition =
+                        (getListView() == null || getListView().getChildCount() == 0) ?
+                                0 : getListView().getChildAt(0).getTop();
+                mSwipeRefreshLayout.setEnabled(firstVisibleItem == 0 && topRowVerticalPosition >= 0);
+                ((TweetTimelineListAdapter) getListAdapter()).refresh(new ContactsCallback<TimelineResult<Tweet>>() {
                     @Override
                     public void success(Result<TimelineResult<Tweet>> result) {
-                        swipeLayout.setRefreshing(false);
+                        mSwipeRefreshLayout.setRefreshing(false);
                     }
 
                     @Override
                     public void failure(TwitterException e) {
-                        //Handle Failure to refresh
+
                     }
                 });
-
             }
         });
-        return view;
     }
-
 
     private void buildUserTimeline() {
         UserTimeline userTimeline = new UserTimeline.Builder()
                 .screenName("fabric")
+                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), userTimeline);
         setListAdapter(adapter);
@@ -103,6 +121,7 @@ public class TimeLineFragment extends ListFragment {
     private void buildSearchTimeline() {
         SearchTimeline searchTimeline = new SearchTimeline.Builder()
                 .query("#skateboarding")
+                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), searchTimeline);
         setListAdapter(adapter);
@@ -110,7 +129,8 @@ public class TimeLineFragment extends ListFragment {
 
     private void buildCollectionTimeline() {
         CollectionTimeline collectionTimeline = new CollectionTimeline.Builder()
-                .id(569961150045896704L)
+                .id(539487832448843776L)
+                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), collectionTimeline);
         setListAdapter(adapter);
@@ -119,6 +139,7 @@ public class TimeLineFragment extends ListFragment {
     private void buildListTimeline() {
         TwitterListTimeline twitterListTimeline = new TwitterListTimeline.Builder()
                 .slugWithOwnerScreenName("coachella-2015", "twittermusic")
+                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), twitterListTimeline);
         setListAdapter(adapter);

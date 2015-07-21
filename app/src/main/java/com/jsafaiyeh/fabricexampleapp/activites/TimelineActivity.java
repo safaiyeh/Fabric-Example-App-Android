@@ -17,7 +17,7 @@ public class TimelineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
-        final String toolbarTitles[] = new String[]{"@fabric", "#skateboarding", "Fabric Picks", "Coachella 2015 by Twitter Music"};
+        final String toolbarTitles[] = new String[]{"@fabric", "#skateboarding", "National Parks", "Coachella 2015 by Twitter Music"};
 
 
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
