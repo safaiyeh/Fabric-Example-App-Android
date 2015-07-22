@@ -25,9 +25,6 @@
         </activity>
 
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
             android:name="io.fabric.ApiKey"
             android:value="44c51c2d2b3868d985385aa04bec54f710309e62" />
 
@@ -71,9 +68,6 @@
         <activity
             android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
         <activity
             android:name=".activites.FullScreenAdActivity"
             android:label="@string/title_activity_full_screen_ad" >
