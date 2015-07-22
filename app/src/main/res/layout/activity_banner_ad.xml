@@ -1,10 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.jsafaiyeh.fabricexampleapp.activites.BannerAdActivity">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
+
+    <com.mopub.mobileads.MoPubView
+        android:id="@+id/mopub_sample_ad"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"/>
 
 </RelativeLayout>

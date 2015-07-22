@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fabric Example App</string>
+    <string name="app_name">Fabric Example</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -8,4 +8,5 @@
     <string name="title_activity_log_in">LogInActivity</string>
     <string name="title_activity_twitter_digits">TwitterDigits</string>
     <string name="title_activity_banner_ad">BannerAdActivity</string>
+    <string name="title_activity_full_screen_ad">FullScreenAdActivity</string>
 </resources>

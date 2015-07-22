@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.crashlytics.android.Crashlytics;
 import com.jsafaiyeh.fabricexampleapp.R;
+import com.mopub.common.MoPub;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Crashlytics(), new Twitter(authConfig));
+        Fabric.with(this, new Crashlytics(), new Twitter(authConfig), new MoPub());
         setContentView(R.layout.activity_main);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -67,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         i = new Intent(getApplicationContext(), TwitterDigitsActivity.class);
+                        startActivity(i);
+                        break;
+                    case 4:
+                        i = new Intent(getApplicationContext(), BannerAdActivity.class);
                         startActivity(i);
                         break;
                 }

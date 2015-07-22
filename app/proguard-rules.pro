@@ -15,3 +15,15 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
+
+# AdMob Support
+-keep class com.google.ads.**
+
+
+-keepclassmembers class com.mopub.mobileads.* { public *; }
+
+-keep public class com.mopub.mobileads.*
+
+-include ../proguard-com.mopub.sdk.android.mopub.txt
