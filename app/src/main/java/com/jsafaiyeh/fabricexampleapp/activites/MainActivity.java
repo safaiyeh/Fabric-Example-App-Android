@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                         break;
                     case 3:
-                        i = new Intent(getApplicationContext(), TwitterDigits.class);
+                        i = new Intent(getApplicationContext(), TwitterDigitsActivity.class);
                         startActivity(i);
                         break;
                 }

@@ -3,6 +3,8 @@
     package="com.jsafaiyeh.fabricexampleapp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -34,8 +36,22 @@
             android:label="@string/title_activity_log_in" >
         </activity>
         <activity
-            android:name=".activites.TwitterDigits"
+            android:name=".activites.TwitterDigitsActivity"
             android:label="@string/title_activity_twitter_digits" >
+        </activity>
+
+        <receiver
+            android:name=".receivers.DigitsResultReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.digits.sdk.android.UPLOAD_COMPLETE" />
+                <action android:name="com.digits.sdk.android.UPLOAD_FAILED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activites.BannerAdActivity"
+            android:label="@string/title_activity_banner_ad" >
         </activity>
     </application>
 

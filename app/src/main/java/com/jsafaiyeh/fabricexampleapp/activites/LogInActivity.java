@@ -19,7 +19,6 @@ import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 public class LogInActivity extends AppCompatActivity {
 
     private TwitterLoginButton loginButton;
-    private Toolbar mToolbar;
     private TextView mTextView;
 
     @Override
@@ -27,7 +26,7 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle("Log In");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
