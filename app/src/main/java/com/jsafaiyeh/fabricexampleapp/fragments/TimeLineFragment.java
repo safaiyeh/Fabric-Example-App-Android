@@ -102,7 +102,6 @@ public class TimeLineFragment extends ListFragment {
 
                     @Override
                     public void failure(TwitterException e) {
-
                     }
                 });
             }
@@ -111,8 +110,7 @@ public class TimeLineFragment extends ListFragment {
 
     private void buildUserTimeline() {
         UserTimeline userTimeline = new UserTimeline.Builder()
-                .screenName("fabric")
-                .maxItemsPerRequest(20)
+                .screenName("Android")
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), userTimeline);
         setListAdapter(adapter);
@@ -121,7 +119,6 @@ public class TimeLineFragment extends ListFragment {
     private void buildSearchTimeline() {
         SearchTimeline searchTimeline = new SearchTimeline.Builder()
                 .query("#skateboarding")
-                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), searchTimeline);
         setListAdapter(adapter);
@@ -130,7 +127,6 @@ public class TimeLineFragment extends ListFragment {
     private void buildCollectionTimeline() {
         CollectionTimeline collectionTimeline = new CollectionTimeline.Builder()
                 .id(539487832448843776L)
-                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), collectionTimeline);
         setListAdapter(adapter);
@@ -139,7 +135,6 @@ public class TimeLineFragment extends ListFragment {
     private void buildListTimeline() {
         TwitterListTimeline twitterListTimeline = new TwitterListTimeline.Builder()
                 .slugWithOwnerScreenName("coachella-2015", "twittermusic")
-                .maxItemsPerRequest(20)
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), twitterListTimeline);
         setListAdapter(adapter);

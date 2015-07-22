@@ -60,7 +60,15 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         i = new Intent(getApplicationContext(), TimelineActivity.class);
                         startActivity(i);
-
+                        break;
+                    case 2:
+                        i = new Intent(getApplicationContext(), LogInActivity.class);
+                        startActivity(i);
+                        break;
+                    case 3:
+                        i = new Intent(getApplicationContext(), TwitterDigits.class);
+                        startActivity(i);
+                        break;
                 }
             }
         });

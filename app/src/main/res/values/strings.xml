@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_embed_tweet">Embed Single Tweets</string>
     <string name="title_activity_timeline">TimelineActivity</string>
+    <string name="title_activity_log_in">LogInActivity</string>
+    <string name="title_activity_twitter_digits">TwitterDigits</string>
 </resources>
