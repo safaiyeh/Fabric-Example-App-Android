@@ -82,6 +82,4 @@ public class NativeAdActivity extends AppCompatActivity {
         adAdapter.destroy();
         super.onDestroy();
     }
-
-
 }

@@ -13,6 +13,8 @@ import com.digits.sdk.android.Digits;
 import com.digits.sdk.android.DigitsAuthButton;
 import com.digits.sdk.android.DigitsException;
 import com.digits.sdk.android.DigitsSession;
+import com.digits.sdk.android.DigitsUser;
+import com.digits.sdk.android.PhoneNumber;
 import com.jsafaiyeh.fabricexampleapp.R;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
@@ -37,8 +39,11 @@ public class TwitterDigitsActivity extends AppCompatActivity {
         digitsButton.setCallback(new AuthCallback() {
             @Override
             public void success(DigitsSession session, String phoneNumber) {
-                mTextView.setText("Logged In with " + phoneNumber);
-                Digits.getInstance().getContactsClient().startContactsUpload(); //See DigitsResultReciever
+                if (phoneNumber != null) {
+                    mTextView.setText("Logged In with " + phoneNumber);
+                    Digits.getInstance().getContactsClient().startContactsUpload(); //See DigitsResultReciever
+                } else
+                    mTextView.setText("Logged In already");
             }
 
             @Override
@@ -47,6 +52,8 @@ public class TwitterDigitsActivity extends AppCompatActivity {
             }
         });
         digitsButton.setAuthTheme(R.style.AppTheme);
+
+
 
         //Process Contact information
         Digits.getInstance().getContactsClient().lookupContactMatches(null, null,
