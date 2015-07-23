@@ -7,12 +7,12 @@ import android.view.MenuItem;
 
 import com.jsafaiyeh.fabricexampleapp.R;
 
-public class FullScreenAdActivity extends AppCompatActivity {
+public class NativeAdActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_full_screen_ad);
+        setContentView(R.layout.activity_native_ad);
     }
-
+    
 }

@@ -72,6 +72,10 @@
             android:name=".activites.FullScreenAdActivity"
             android:label="@string/title_activity_full_screen_ad" >
         </activity>
+        <activity
+            android:name=".activites.NativeAdActivity"
+            android:label="@string/title_activity_native_ad" >
+        </activity>
     </application>
 
 </manifest>

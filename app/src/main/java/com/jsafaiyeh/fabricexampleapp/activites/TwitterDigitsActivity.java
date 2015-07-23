@@ -27,9 +27,9 @@ public class TwitterDigitsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_twitter_digits);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setTitle("Digits");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbar.setTitle("Digits");
 
         mTextView = (TextView) findViewById(R.id.phone_number);
 
