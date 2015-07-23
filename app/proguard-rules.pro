@@ -28,3 +28,4 @@
 
 -include ../proguard-com.mopub.sdk.android.mopub.txt
 -include ../proguard-com.mopub.sdk.android.mopub.txt
+-include ../proguard-com.mopub.sdk.android.mopub.txt

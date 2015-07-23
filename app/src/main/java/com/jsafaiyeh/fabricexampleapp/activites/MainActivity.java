@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                         i = new Intent(getApplicationContext(), FullScreenAdActivity.class);
                         startActivity(i);
                         break;
+                    case 6:
+                        i = new Intent(getApplicationContext(), NativeAdActivity.class);
+                        startActivity(i);
                 }
             }
         });
