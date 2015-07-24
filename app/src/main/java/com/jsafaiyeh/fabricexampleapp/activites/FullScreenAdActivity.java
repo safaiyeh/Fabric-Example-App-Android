@@ -13,7 +13,7 @@ import com.mopub.mobileads.MoPubInterstitial;
 public class FullScreenAdActivity extends AppCompatActivity implements MoPubInterstitial.InterstitialAdListener {
 
     // Replace this test id with your personal ad unit id
-    private static final String MOPUB_INTERSTITIAL_AD_UNIT_ID = "2be8f7ceb2c14c14b57910146144e80e";
+    private static final String MOPUB_INTERSTITIAL_AD_UNIT_ID = "ba392c405a9a49f8ab3207989e384ebc";
     private MoPubInterstitial interstitial;
 
     @Override

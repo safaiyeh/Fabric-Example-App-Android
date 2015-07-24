@@ -44,7 +44,6 @@ dependencies {
         transitive = true;
     }
     compile 'com.android.support:design:22+'
-    compile('com.mopub.sdk.android:mopub:3.8.0@aar') {
-        transitive = true;
-    }
+    compile 'com.google.android.gms:play-services:7.5.0'
+    compile project(':mopub-sdk')
 }

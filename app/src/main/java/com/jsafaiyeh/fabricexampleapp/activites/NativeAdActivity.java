@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class NativeAdActivity extends AppCompatActivity {
 
     //Replace this test id with your personal ad unit id
-    private static final String MOPUB_NATIVE_AD_UNIT_ID = "6eaafa8a1f9d44d2961112d17f3fd168";
+    private static final String MOPUB_NATIVE_AD_UNIT_ID = "317835218ff34057aa5999191befeecd";
     private MoPubAdAdapter adAdapter;
 
     @Override
@@ -41,17 +41,7 @@ public class NativeAdActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 sampleItems
         );
-        ViewBinder viewBinder = new ViewBinder.Builder(R.layout.example_native_ad)
-                .titleId(R.id.native_title)
-                .textId(R.id.native_text)
-                .mainImageId(R.id.native_main_image)
-                .iconImageId(R.id.native_icon_image)
-                .callToActionId(R.id.native_cta)
-                .build();
-        MoPubNativeAdRenderer adRenderer = new MoPubNativeAdRenderer(viewBinder);
-        adAdapter = new MoPubAdAdapter(this, sampleAdapter);
-        adAdapter.registerAdRenderer(adRenderer);
-        sampleListView.setAdapter(adAdapter);
+        //TODO: Set up native ads
 
     }
 
