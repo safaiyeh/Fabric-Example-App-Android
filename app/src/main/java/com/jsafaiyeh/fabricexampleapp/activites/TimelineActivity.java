@@ -1,5 +1,6 @@
 package com.jsafaiyeh.fabricexampleapp.activites;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -16,6 +17,7 @@ public class TimelineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         final String toolbarTitles[] = new String[]{"@Android", "#skateboarding", "National Parks", "Coachella 2015 by Twitter Music"};
 
