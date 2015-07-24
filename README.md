@@ -15,7 +15,7 @@ You can download the application from [Google Play Store](https://play.google.co
 
 
 #Setting Up
-Download the Fabric Android Studio plugin found [here].(https://fabric.io)
+Download the Fabric Android Studio plugin found [here](https://fabric.io).
 
 
 
