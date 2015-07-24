@@ -19,7 +19,7 @@ public class TimelineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_timeline);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        final String toolbarTitles[] = new String[]{"@Android", "#skateboarding", "National Parks", "Coachella 2015 by Twitter Music"};
+        final String toolbarTitles[] = new String[]{"@JSafaiyeh", "#skateboarding", "National Parks", "Coachella 2015 by Twitter Music"};
 
 
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);

@@ -13,7 +13,6 @@ import android.widget.ListView;
 
 import com.crashlytics.android.Crashlytics;
 import com.jsafaiyeh.fabricexampleapp.R;
-import com.mopub.common.MoPub;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
@@ -35,16 +34,16 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Fabric Components");
+        mToolbar.setTitle("Components");
 
         String[] fabricComponents = {
                 "Embed Tweets",
                 "Timelines",
                 "Log In With Twitter",
                 "Digits",
-                "MoPub Banner Ad",
-                "MoPub FullScreen Ad",
-                "MoPub Native Ad"
+                "Banner Ad",
+                "FullScreen Ad",
+                "Native Ad"
         };
 
         ListView mListView = (ListView) findViewById(R.id.list_view);
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                         break;
                     case 3:
-                        i = new Intent(getApplicationContext(), TwitterDigitsActivity.class);
+                        i = new Intent(getApplicationContext(), DigitsActivity.class);
                         startActivity(i);
                         break;
                     case 4:

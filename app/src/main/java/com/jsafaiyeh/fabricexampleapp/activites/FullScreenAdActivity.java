@@ -24,7 +24,7 @@ public class FullScreenAdActivity extends AppCompatActivity implements MoPubInte
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("MoPub Fullscreen Ad");
+        mToolbar.setTitle("Fullscreen Ad");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

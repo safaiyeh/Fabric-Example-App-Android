@@ -20,7 +20,7 @@ import com.jsafaiyeh.fabricexampleapp.R;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
 
-public class TwitterDigitsActivity extends AppCompatActivity {
+public class DigitsActivity extends AppCompatActivity {
 
     private TextView mTextView;
 

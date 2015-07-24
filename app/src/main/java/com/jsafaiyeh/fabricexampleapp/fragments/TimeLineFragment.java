@@ -110,7 +110,7 @@ public class TimeLineFragment extends ListFragment {
 
     private void buildUserTimeline() {
         UserTimeline userTimeline = new UserTimeline.Builder()
-                .screenName("Android")
+                .screenName("Jsafaiyeh")
                 .build();
         adapter = new TweetTimelineListAdapter(getActivity(), userTimeline);
         setListAdapter(adapter);

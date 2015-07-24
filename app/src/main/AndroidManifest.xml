@@ -42,7 +42,7 @@
             android:label="@string/title_activity_log_in" >
         </activity>
         <activity
-            android:name=".activites.TwitterDigitsActivity"
+            android:name=".activites.DigitsActivity"
             android:label="@string/title_activity_twitter_digits" >
         </activity>
 
