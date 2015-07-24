@@ -10,6 +10,7 @@ import com.jsafaiyeh.fabricexampleapp.R;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.mopub.nativeads.MoPubAdAdapter;
+import com.mopub.nativeads.MoPubNativeAdPositioning;
 import com.mopub.nativeads.MoPubNativeAdRenderer;
 import com.mopub.nativeads.RequestParameters;
 import com.mopub.nativeads.ViewBinder;
@@ -19,7 +20,7 @@ public class NativeAdActivity extends AppCompatActivity {
 
     //Replace this test id with your personal ad unit id
     private static final String MOPUB_NATIVE_AD_UNIT_ID = "317835218ff34057aa5999191befeecd";
-    private MoPubAdAdapter adAdapter;
+    private MoPubAdAdapter mAdAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,28 @@ public class NativeAdActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 sampleItems
         );
-        //TODO: Set up native ads
+        //Set up native ads
+        ViewBinder viewBinder = new ViewBinder.Builder(R.layout.native_ad_layout)
+                .mainImageId(R.id.native_ad_main_image)
+                .iconImageId(R.id.native_ad_icon_image)
+                .titleId(R.id.native_ad_title)
+                .textId(R.id.native_ad_text)
+                .addExtra("sponsoredtext", R.id.sponsored_text)
+                .build();
 
+        // Set up the positioning behavior your ads should have.
+        MoPubNativeAdPositioning.MoPubServerPositioning adPositioning =
+                MoPubNativeAdPositioning.serverPositioning();
+        MoPubNativeAdRenderer adRenderer = new MoPubNativeAdRenderer(viewBinder);
+
+        // Set up the MoPubAdAdapter
+        mAdAdapter = new MoPubAdAdapter(this,sampleAdapter, adPositioning);
+        mAdAdapter.registerAdRenderer(adRenderer);
+
+        sampleListView.setAdapter(mAdAdapter);
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -63,13 +83,13 @@ public class NativeAdActivity extends AppCompatActivity {
                 .build();
 
         // Request ads when the user returns to this activity
-        adAdapter.loadAds(MOPUB_NATIVE_AD_UNIT_ID, parameters);
+        mAdAdapter.loadAds(MOPUB_NATIVE_AD_UNIT_ID, parameters);
         super.onResume();
     }
 
     @Override
     protected void onDestroy() {
-        adAdapter.destroy();
+        mAdAdapter.destroy();
         super.onDestroy();
     }
 }
