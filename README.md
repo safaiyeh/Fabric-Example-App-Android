@@ -3,6 +3,10 @@ Example Android application that integrates Fabric's core features.
 
 
 
+*Note: This is not affilated with Twitter or Fabric. This app is intended to show the features of Fabric and provide code examples in a working application.
+
+
+
 
 ![alt tag](http://static1.squarespace.com/static/54ac6f9ae4b0cf1d82a4b59e/t/55660fe8e4b0e7bfbea83dd1/1432752105889/)
 
