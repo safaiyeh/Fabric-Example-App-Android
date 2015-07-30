@@ -23,7 +23,7 @@ public class TimelineActivity extends AppCompatActivity {
 
 
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("@Android");
+        mToolbar.setTitle("@JSafiyeh");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
