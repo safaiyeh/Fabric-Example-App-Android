@@ -13,7 +13,7 @@ import com.jsafaiyeh.fabricexampleapp.R;
 public class BannerAdActivity extends AppCompatActivity {
 
     // Replace this test id with your personal ad unit id
-    private static final String MOPUB_BANNER_AD_UNIT_ID = "dd1cba88cc0c4bd18984595cfe753f3a";
+    private static final String MOPUB_BANNER_AD_UNIT_ID = "d4a0aba637d64a9f9a05a575fa757ac2";
     private MoPubView moPubView;
 
     @Override

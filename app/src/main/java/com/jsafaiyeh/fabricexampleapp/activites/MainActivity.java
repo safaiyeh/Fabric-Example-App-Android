@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.crashlytics.android.Crashlytics;
 import com.jsafaiyeh.fabricexampleapp.R;
+import com.mopub.common.MoPub;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 

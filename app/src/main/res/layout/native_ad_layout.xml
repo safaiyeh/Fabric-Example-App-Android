@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/background"
     android:padding="16dp"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <ImageView android:id="@+id/native_ad_main_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"/>
+        android:background="@null"
+        android:layout_margin="2dp"
+        android:layout_below="@+id/native_ad_icon_image"/>
     <ImageView android:id="@+id/native_ad_icon_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
-        android:layout_alignBottom="@+id/native_ad_main_image"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="@null" />
     <TextView android:id="@+id/native_ad_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/native_ad_main_image"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"/>
     <TextView android:id="@+id/native_ad_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-    <TextView
-        android:id="@+id/sponsored_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/native_ad_main_image"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@id/native_ad_main_image"
+        android:textColor="@android:color/white"/>
 </RelativeLayout>

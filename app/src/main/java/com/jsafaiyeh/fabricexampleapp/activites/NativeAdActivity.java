@@ -20,7 +20,8 @@ import java.util.ArrayList;
 public class NativeAdActivity extends AppCompatActivity {
 
     //Replace this test id with your personal ad unit id
-    private static final String MOPUB_NATIVE_AD_UNIT_ID = "317835218ff34057aa5999191befeecd";
+    // TODO: Replace this test id with your personal ad unit id
+    private static final String MOPUB_NATIVE_AD_UNIT_ID = "6eaafa8a1f9d44d2961112d17f3fd168";
     private MoPubAdAdapter mAdAdapter;
 
     @Override
@@ -50,7 +51,6 @@ public class NativeAdActivity extends AppCompatActivity {
                 .iconImageId(R.id.native_ad_icon_image)
                 .titleId(R.id.native_ad_title)
                 .textId(R.id.native_ad_text)
-                .addExtra("sponsoredtext", R.id.sponsored_text)
                 .build();
 
         // Set up the positioning behavior your ads should have.
